@@ -1,0 +1,214 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="/img/hero-img2.jpg" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy"
+            alt="Cooking with Node.js">
+    </div>
+
+    <div class="col-12 col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">A small collection of delicious recipe ideas</h1>
+        <p class="lead">
+            Explore my delicious recipe ideas including : easy breakfast , delicious vegeterian
+            dinner ideas , quick bakes and family-friendly meals.
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Latest</a>
+            <!-- <a href="/random-recipe" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Show Random</a> -->
+        </div>
+    </div>
+</div>
+
+
+<!--Categoris Start-->
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4 ">
+
+    <% if(categories !='' ) { %>
+        <% categories.forEach(function(category , index) { %>
+            <a href="/categories/<%- category.image -%>" class="col text-center category__link">
+                <div class="category__img shadow">
+                    <img src="img/<%- category.image -%>" alt="<%- category.name -%>" loading="lazy">
+                </div>
+                <div class="pt-1"><%- category.name -%></div>
+            </a>
+            <% }) %>
+                <% } %>
+                    <a href="/categories" class="col text-center category__link">
+                        <div class="category__img shadow">
+                            <img src="img/loading-img.jpg" alt="View All Categories" loading="lazy">
+                        </div>
+                        <div class="pt-1">View All</div>
+                    </a>
+</div>
+<!--Categoris End-->
+
+
+
+<!--Latest Start-->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Latest Recipes</h2>
+        <a href="/explore-latest" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if(food !='' ) { %>
+            <% food.latest.forEach(function(recipe, index ){ %>
+
+                <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+                    <div class="category__img category__img--large shadow">
+                        <img src="img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+                    </div>
+                    <div class="pt-1"><%= recipe.name %></div>
+                </a>
+            <% }) %>
+        <% } %>
+
+    </div>
+
+</section>
+
+<!--Latest End-->
+
+
+
+<!--breakfast Start-->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Breakfast Recipes</h2>
+        <a href="/categories/BreaKfast" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if(food !='' ) { %>
+            <% food.breakfast.forEach(function(recipe, index ){ %>
+
+                <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+                    <div class="category__img category__img--large shadow">
+                        <img src="img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+                    </div>
+                    <div class="pt-1"><%= recipe.name %></div>
+                </a>
+            <% }) %>
+        <% } %>
+
+    </div>
+
+</section>
+
+<!--breakfast End-->
+
+<!--lunch Start-->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Lunch Recipes</h2>
+        <a href="/categories/Lunch" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if(food !='' ) { %>
+            <% food.lunch.forEach(function(recipe, index ){ %>
+
+                <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+                    <div class="category__img category__img--large shadow">
+                        <img src="img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+                    </div>
+                    <div class="pt-1"><%= recipe.name %></div>
+                </a>
+            <% }) %>
+        <% } %>
+
+    </div>
+
+</section>
+
+<!--lunch End-->
+
+<!--Snacks Start-->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Snacks Recipes</h2>
+        <a href="/categories/Snacks" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if(food !='' ) { %>
+            <% food.snacks.forEach(function(recipe, index ){ %>
+
+                <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+                    <div class="category__img category__img--large shadow">
+                        <img src="img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+                    </div>
+                    <div class="pt-1"><%= recipe.name %></div>
+                </a>
+            <% }) %>
+        <% } %>
+
+    </div>
+
+</section>
+
+<!--Snacks End-->
+
+<!--Dinner Start-->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Dinner Recipes</h2>
+        <a href="/categories/Dinner" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if(food !='' ) { %>
+            <% food.dinner.forEach(function(recipe, index ){ %>
+
+                <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+                    <div class="category__img category__img--large shadow">
+                        <img src="img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+                    </div>
+                    <div class="pt-1"><%= recipe.name %></div>
+                </a>
+            <% }) %>
+        <% } %>
+
+    </div>
+
+</section>
+
+<!--dinner End-->
+
+<!--dessert Start-->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Dessert Recipes</h2>
+        <a href="/categories/Dessert" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        <% if(food !='' ) { %>
+            <% food.dessert.forEach(function(recipe, index ){ %>
+
+                <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+                    <div class="category__img category__img--large shadow">
+                        <img src="img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+                    </div>
+                    <div class="pt-1"><%= recipe.name %></div>
+                </a>
+            <% }) %>
+        <% } %>
+
+    </div>
+
+</section>
+
+<!--dessert End-->
